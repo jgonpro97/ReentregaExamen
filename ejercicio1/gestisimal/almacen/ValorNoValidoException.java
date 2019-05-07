@@ -2,8 +2,8 @@ package gestisimal.almacen;
 
 public class ValorNoValidoException extends Exception {
 
-	public ValorNoValidoException(String msj) {
-		super(msj);
-	}
-	
+  public ValorNoValidoException(String msj) {
+    super(msj);
+  }
+
 }

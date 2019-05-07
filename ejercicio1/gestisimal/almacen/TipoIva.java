@@ -1,5 +1,5 @@
 package gestisimal.almacen;
 
 public enum TipoIva {
-	GENERAL, REDUCIDO, SUPERREDUCIDO
+  GENERAL, REDUCIDO, SUPERREDUCIDO
 }

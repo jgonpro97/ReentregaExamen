@@ -2,8 +2,8 @@ package gestisimal.almacen;
 
 public class CodigoNoValidoException extends Exception {
 
-	public CodigoNoValidoException(String msj) {
-		super(msj);
-	}
+  public CodigoNoValidoException(String msj) {
+    super(msj);
+  }
 
 }
