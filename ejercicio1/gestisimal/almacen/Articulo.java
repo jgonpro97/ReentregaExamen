@@ -59,11 +59,11 @@ public class Articulo {
     return descripcion;
   }
 
-  public TipoIva getIva() {
+  TipoIva getIva() {
     return iva;
   }
 
-  public void setIva(TipoIva iva) throws IvaInvalidoException {
+  void setIva(TipoIva iva) throws IvaInvalidoException {
     if (iva == null) {
       throw new IvaInvalidoException("\nNo ha introducido el iva\n");
     }
