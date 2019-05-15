@@ -51,12 +51,9 @@ public class TestAlmacen {
       case 6:
         decrementar();
         break;
-      case 7:
-        System.out.println("\nSaliendo....");
-        break;
       default:
-        System.err.println("\nOpcion no valida (1 al 7)\n");
-        break;
+        System.out.println("Saliendo..");
+        return;
       }
 
     } while (opcion != 7);
@@ -86,10 +83,7 @@ public class TestAlmacen {
     try {
 
       System.out.println("\n" + almacen);
-      int codigo = Teclado.leerEntero("\nIntroduce el codigo del articulo que quieras borrar del almacen: ");
-
-      almacen.get(codigo);
-      almacen.borrarArticulo(codigo);
+      almacen.borrarArticulo(Teclado.leerEntero("\nIntroduce el codigo del articulo que quieras modificar del almacen: "));
       System.out.println("\nArticulo borrado correctamente\n");
 
     } catch (CodigoNoValidoException e) {
@@ -109,7 +103,7 @@ public class TestAlmacen {
       Articulo articulo = almacen.get(codigo);
       System.out.println(articulo);
 
-      almacen.modificarArticulo(articulo, Teclado.leerCadena("Descripcion: "),
+      almacen.modificarArticulo(codigo, Teclado.leerCadena("Descripcion: "),
           Teclado.leerDecimal("Precio de compra: "), Teclado.leerDecimal("Precio de venta: "),
           Teclado.leerEntero("Stock: \n"), tipoIva());
       System.out.println("\nArticulo modificado correctamente\n");
