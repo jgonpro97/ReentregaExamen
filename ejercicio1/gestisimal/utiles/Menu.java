@@ -7,9 +7,9 @@ package gestisimal.utiles;
  * @version 1.0
  */
 public class Menu {
-  String titulo;
-  String[] opciones;
-  int numOpciones;
+  private String titulo;
+  private String[] opciones;
+  private int numOpciones;
 
   public Menu(String titulo, String[] opciones) {
     this.titulo = titulo;
@@ -22,7 +22,7 @@ public class Menu {
     return recogerOpcion();
   }
 
-  void mostrar() {
+  private void mostrar() {
     int i = 1;
 
     System.out.println(titulo);
@@ -36,7 +36,7 @@ public class Menu {
 
   }
 
-  int recogerOpcion() {
+  private int recogerOpcion() {
     int opcion;
 
     do {
