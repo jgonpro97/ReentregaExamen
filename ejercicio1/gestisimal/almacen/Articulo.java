@@ -1,7 +1,5 @@
 package gestisimal.almacen;
 
-import java.util.InputMismatchException;
-
 /**
  * Clase Articulo con los atributos principales
  * 
@@ -35,7 +33,7 @@ public class Articulo {
     setPrecioVenta(precioVenta);
     setStock(stock);
     setIva(iva);
-    setCodigo(codigo);
+    setCodigo();
   }
 
   /**
@@ -51,7 +49,7 @@ public class Articulo {
     return codigo;
   }
 
-  void setCodigo(int codigo) {
+  void setCodigo() {
     this.codigo = Articulo.cont++;
   }
 
@@ -81,7 +79,7 @@ public class Articulo {
 
   void setPrecioCompra(double precioCompra) throws ValorNoValidoException {
     if (precioCompra < 0) {
-      throw new ValorNoValidoException("\nEl precio de compra no puede ser menor de 0\n");
+      throw new ValorNoValidoException("\nEl precio de compra no puede ser negativo\n");
     }
 
     this.precioCompra = precioCompra;
@@ -94,7 +92,7 @@ public class Articulo {
 
   void setPrecioVenta(double precioVenta) throws ValorNoValidoException {
     if (precioVenta < 0) {
-      throw new ValorNoValidoException("\nEl precio de venta no puede ser menor de 0\n");
+      throw new ValorNoValidoException("\nEl precio de venta no puede ser negativo\n");
     }
 
     this.precioVenta = precioVenta;
@@ -106,7 +104,7 @@ public class Articulo {
 
   void setStock(int stock) throws ValorNoValidoException {
     if (stock < 0) {
-      throw new ValorNoValidoException("\nEl stock no puede ser menor de 0\n");
+      throw new ValorNoValidoException("\nEl stock no puede ser negativo\n");
     }
 
     this.stock = stock;
@@ -120,7 +118,7 @@ public class Articulo {
    */
   void aumentarStock(int num) throws ValorNoValidoException {
     if (num < 0) {
-      throw new ValorNoValidoException("\nEl stock no puede ser menor de 0\n");
+      throw new ValorNoValidoException("\nLa cantidad añadida al stock no puede ser negativa\n");
     }
 
     setStock(stock + num);
@@ -134,7 +132,7 @@ public class Articulo {
    */
   void decrementarStock(int num) throws ValorNoValidoException {
     if (num < 0) {
-      throw new ValorNoValidoException("\nEl stock no puede ser menor de 0\n");
+      throw new ValorNoValidoException("\nLa cantidad decrementada al stock no puede ser negativa\n");
     }
 
     setStock(stock - num);
