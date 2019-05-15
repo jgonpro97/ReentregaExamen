@@ -28,10 +28,6 @@ public class Almacen {
       throws ArticuloExisteException, ValorNoValidoException, IvaInvalidoException {
     Articulo articulo = new Articulo(descripcion, precioCompra, precioVenta, stock, iva);
 
-    if (arraylist.contains(articulo)) {
-      throw new ArticuloExisteException("\nEl articulo ya existe en el almacen\n");
-    }
-
     arraylist.add(articulo);
   }
 
@@ -41,7 +37,7 @@ public class Almacen {
    * @param codigo
    * @return
    */
-  public boolean borrarArticulo(int codigo) {
+  public boolean borrarArticulo(int codigo) throws CodigoNoValidoException{
     return arraylist.remove(new Articulo(codigo));
   }
 
@@ -56,11 +52,11 @@ public class Almacen {
    * @param iva
    * @throws ValorNoValidoException
    * @throws IvaInvalidoException
+   * @throws CodigoNoValidoException 
    */
-  public void modificarArticulo(Articulo articulo, String descripcion, double precioCompra, double precioVenta,
-      int stock, TipoIva iva) throws ValorNoValidoException, IvaInvalidoException {
-    articulo.set(descripcion, precioCompra, precioVenta, stock, iva);
-    arraylist.set(arraylist.indexOf(articulo), arraylist.get(arraylist.indexOf(articulo)));
+  public void modificarArticulo(int codigo, String descripcion, double precioCompra, double precioVenta,
+      int stock, TipoIva iva) throws ValorNoValidoException, IvaInvalidoException, CodigoNoValidoException {
+    get(codigo).set(descripcion, precioCompra, precioVenta, stock, iva);
   }
 
   /**
@@ -86,10 +82,10 @@ public class Almacen {
    * @param codigo
    * @param numero
    * @throws ValorNoValidoException
+   * @throws CodigoNoValidoException 
    */
-  public void aumentarStock(int codigo, int numero) throws ValorNoValidoException {
-    Articulo articulo = arraylist.get(arraylist.indexOf(new Articulo(codigo)));
-    articulo.aumentarStock(numero);
+  public void aumentarStock(int codigo, int numero) throws ValorNoValidoException, CodigoNoValidoException {
+    get(codigo).aumentarStock(numero);
   }
 
   /**
@@ -98,10 +94,10 @@ public class Almacen {
    * @param codigo
    * @param numero
    * @throws ValorNoValidoException
+   * @throws CodigoNoValidoException 
    */
-  public void decrementarStock(int codigo, int numero) throws ValorNoValidoException {
-    Articulo articulo = arraylist.get(arraylist.indexOf(new Articulo(codigo)));
-    articulo.decrementarStock(numero);
+  public void decrementarStock(int codigo, int numero) throws ValorNoValidoException, CodigoNoValidoException {
+    get(codigo).decrementarStock(numero);
   }
 
   @Override
