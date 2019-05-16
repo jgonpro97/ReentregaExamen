@@ -36,8 +36,9 @@ public class Almacen {
    * 
    * @param codigo
    * @return
+   * @throws CodigoNoValidoException 
    */
-  public boolean borrarArticulo(int codigo) throws CodigoNoValidoException{
+  public boolean borrarArticulo(int codigo){
     return arraylist.remove(new Articulo(codigo));
   }
 

@@ -25,7 +25,7 @@ public class TestAlmacen {
   private static Menu menuIva = new Menu("\nTipo de iva",
       new String[] { "General", "Reducido", "Super reducido", "Salir" });
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws CodigoNoValidoException {
     int opcion = 0;
 
     do {
@@ -78,18 +78,24 @@ public class TestAlmacen {
 
   /**
    * Metodo para capturar la excepciones de borrar articulo de stock
+   * @throws CodigoNoValidoException 
    */
   static void borrar() {
     try {
-
+      
       System.out.println("\n" + almacen);
-      almacen.borrarArticulo(Teclado.leerEntero("\nIntroduce el codigo del articulo que quieras modificar del almacen: "));
+      int codigo = Teclado.leerEntero("\nIntroduce el codigo del articulo que quieras modificar del almacen: ");
+      Articulo articulo = almacen.get(codigo);
+      System.out.println(articulo);
+      
+      almacen.borrarArticulo(codigo);
       System.out.println("\nArticulo borrado correctamente\n");
-
+      
     } catch (CodigoNoValidoException e) {
       System.err.println(e.getMessage());
     }
 
+    
   }
 
   /**
