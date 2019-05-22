@@ -11,7 +11,12 @@ package ejercicio2;
 public class Rectangulo {
   private int ancho;
   private int alto;
-
+  
+  /**
+   * Constructor de Rectangulo
+   * @param ancho
+   * @param alto
+   */
   public Rectangulo(int ancho, int alto) {
     setAncho(ancho);
     setAlto(alto);
@@ -22,7 +27,7 @@ public class Rectangulo {
   }
 
   private void setAncho(int ancho) {
-    if (ancho <= 0 || ancho > 10) {
+    if (ancho < 1 || ancho > 10) {
       throw new ArithmeticException("Valores del ancho entre 1 y 10");
     }
 
@@ -35,7 +40,7 @@ public class Rectangulo {
   }
 
   private void setAlto(int alto) {
-    if (alto <= 0 || alto > 10) {
+    if (alto <  1 || alto > 10) {
       throw new ArithmeticException("Valores del alto entre 1 y 10");
     }
 
@@ -43,16 +48,16 @@ public class Rectangulo {
   }
 
   public String toString() {
-    int i, espacios;
+    int espacios;
     String resultado = "";
     
-    for (i = 0; i < this.ancho; i++) {
+    for (int i = 0; i < this.ancho; i++) {
       resultado += "*";
     }
     
     resultado += "\n";
     
-    for (i = 1; i < this.alto - 1; i++) {
+    for (int i = 1; i < this.alto - 1; i++) {
       resultado += "*";
       
       for (espacios = 1; espacios < this.ancho - 1; espacios++) {
@@ -62,7 +67,7 @@ public class Rectangulo {
       resultado += "*\n";
     }
     
-    for (i = 0; i < this.ancho; i++) {
+    for (int i = 0; i < this.ancho; i++) {
       resultado += "*";
     }
     

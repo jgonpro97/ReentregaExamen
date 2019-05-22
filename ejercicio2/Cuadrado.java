@@ -8,7 +8,11 @@ package ejercicio2;
  *
  */
 public class Cuadrado extends Rectangulo implements Comparable<Cuadrado> {
-
+  
+  /**
+   * Constructor de Cuadrado
+   * @param lado
+   */
   public Cuadrado(int lado) {
     super(lado, lado);
   }
@@ -20,7 +24,10 @@ public class Cuadrado extends Rectangulo implements Comparable<Cuadrado> {
   public String toString() {
     return super.toString();
   }
-
+  
+  /**
+   * Metodo compareTo para la comparacion de Cuadrados
+   */
   @Override
   public int compareTo(Cuadrado other) {
     if (this.getLado() < other.getLado()) {
