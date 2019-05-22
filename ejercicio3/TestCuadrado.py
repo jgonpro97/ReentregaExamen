@@ -1,3 +1,6 @@
+''' Clase para pruebas de Cuadrado
+__author__: Juan Manuel Gonzalez Profumo
+'''
 from ejercicio3.Cuadrado import Cuadrado
 
 try:
