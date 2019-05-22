@@ -23,7 +23,7 @@ public class Rectangulo {
 
   private void setAncho(int ancho) {
     if (ancho <= 0 || ancho > 10) {
-      throw new ArithmeticException("Valores del alto y ancho entre 1 y 10");
+      throw new ArithmeticException("Valores del ancho entre 1 y 10");
     }
 
     this.ancho = ancho;
@@ -36,7 +36,7 @@ public class Rectangulo {
 
   private void setAlto(int alto) {
     if (alto <= 0 || alto > 10) {
-      throw new ArithmeticException();
+      throw new ArithmeticException("Valores del alto entre 1 y 10");
     }
 
     this.alto = alto;
