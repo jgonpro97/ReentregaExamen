@@ -2,7 +2,7 @@ from ejercicio3.Cuadrado import Cuadrado
 
 try:
     cuadrado = Cuadrado(5)
-    cuadrado2 = Cuadrado(11)
+    cuadrado2 = Cuadrado(4)
     print(cuadrado)
     print(cuadrado2)
 except ArithmeticError as e:

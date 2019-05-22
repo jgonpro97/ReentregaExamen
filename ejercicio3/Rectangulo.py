@@ -27,7 +27,7 @@ class Rectangulo():
     def __verifica_lado(num):
         if not isinstance(num, int):  # lado no entero
             raise TypeError("Lado no entero", num)
-        if (num <= 0 or num > 10):
+        if (num < 1 or num > 10):
             raise ArithmeticError("Valor introducido entre 1 y 10")
 
     def __str__(self):
