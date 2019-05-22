@@ -11,7 +11,7 @@ public class TestRectangulo {
   public static void main(String[] args) {
     try {
 
-      Rectangulo rectangulo = new Rectangulo(5, 4);
+      Rectangulo rectangulo = new Rectangulo(5, 6);
       
       System.out.println("Rectangulo de ancho " + rectangulo.getAncho() + " y alto de " + rectangulo.getAlto());
       System.out.println("\n" + rectangulo);
