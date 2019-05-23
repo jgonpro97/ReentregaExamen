@@ -43,8 +43,8 @@ class Cuadrado(Rectangulo):
     def __gt__(self, Cuadrado):
         return self.lado > Cuadrado.lado
 
-    def __lt__(self, Cuadrado):
-        return self.lado < Cuadrado.lado
+    def __ge__(self, Cuadrado):
+        return self.lado >= Cuadrado.lado
 
     def __eq__(self, Cuadrado):
         return self.lado == Cuadrado.lado
