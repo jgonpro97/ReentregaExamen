@@ -26,10 +26,6 @@ public class Cuadrado extends Rectangulo implements Comparable<Cuadrado> {
     setAlto(lado);
   }
   
-  public String toString() {
-    return super.toString();
-  }
-  
   @Override
   public int hashCode() {
     final int prime = 31;
