@@ -20,7 +20,12 @@ public class Cuadrado extends Rectangulo implements Comparable<Cuadrado> {
   public int getLado() {
     return this.getAncho();
   }
-
+  
+  public void setLado(int lado) {
+    setAncho(lado);
+    setAlto(lado);
+  }
+  
   public String toString() {
     return super.toString();
   }
