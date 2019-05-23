@@ -21,8 +21,8 @@ class Rectangulo():
     ''' Constructor de Rectangulo '''
 
     def __init__(self, ancho, alto):
-        self.__ancho = ancho
-        self.__alto = alto
+        self.alto = alto
+        self.ancho = ancho
 
     @property
     def ancho(self):
