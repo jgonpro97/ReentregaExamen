@@ -25,6 +25,30 @@ public class Cuadrado extends Rectangulo implements Comparable<Cuadrado> {
     return super.toString();
   }
   
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    long temp;
+    temp = Double.doubleToLongBits(getLado());
+    result = prime * result + (int) (temp ^ (temp >>> 32));
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    Cuadrado other = (Cuadrado) obj;
+    if (Double.doubleToLongBits(getLado()) != Double.doubleToLongBits(other.getLado()))
+      return false;
+    return true;
+  }
+  
   /**
    * Metodo compareTo para la comparacion de Cuadrados
    */
